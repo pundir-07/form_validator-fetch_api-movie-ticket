@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./css/searchStyle.css" />
+    <link rel="stylesheet" href="./css/ticketStyle.css" />
+    <title>From Validator</title>
+  </head>
+  <body>
+    <div id="form-container" class="container">
+      <form action="" id="form" class="form">
+        <h2>Register</h2>
+        <div class="form-control">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            name="Username"
+            placeholder="Enter username"
+            onblur="usernameValidator()"
+          />
+          <small>Error message</small>
+        </div>
+        <div class="form-control">
+          <label for="email">Email</label>
+          <input
+            type="text"
+            id="email"
+            name="Email"
+            placeholder="Enter email"
+            onblur="emailValidator()"
+          />
+          <small>Error message</small>
+        </div>
+        <div class="form-control">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="Password"
+            placeholder="Enter password"
+            onblur="passwordValidator()"
+          />
+          <small>Error message</small>
+        </div>
+        <div class="form-control">
+          <label for="password2">Confirm password</label>
+          <input
+            type="password"
+            id="password2"
+            name="Password"
+            placeholder="Enter password again"
+            onblur="confirmPasswordValidator()"
+          />
+          <small>Error message</small>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+      <!-- <button id="test" onclick="handleTestButton()">Test</button> -->
+    </div>
+    <div id="search-page" class="search-page">
+      <div id="back-arrow-1">
+        <i class="fa-solid fa-angle-left"></i>
+      </div>
+      <div id="search-container" class="search-container">
+        <div id="search-bar" class="search-bar">
+          <input type="text" placeholder="Search movie" />
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <div id="movie-grid" class="movie-grid">
+          <!-- <div class="movie-card">
+                    <img
+                    src="https://image.tmdb.org/t/p/original/qNBAXBIQlnOThrVvA6mA2B5ggV6.jpg"
+                    alt=""
+                    />
+                </div> -->
+        </div>
+      </div>
+    </div>
+    <div id="movie-page" class="movie-page">
+      <div id="back-arrow-2" class="back-arrow">
+        <i class="fa-solid fa-angle-left"></i>
+      </div>
+      <div class="movie-poster-container">
+        <div id="movie-poster" class="movie-poster">
+          <img src="" alt="" />
+        </div>
+      </div>
+      <div class="inner-body">
+        <div class="movie-title">
+          <h2 id="movie-title"></h2>
+        </div>
+
+        <ul class="showcase">
+          <li>
+            <div class="seat"></div>
+            <small>N/A</small>
+          </li>
+          <li>
+            <div class="seat selected"></div>
+            <small>Selected</small>
+          </li>
+          <li>
+            <div class="seat occupied"></div>
+            <small>Occupied</small>
+          </li>
+        </ul>
+        <div class="seat-container">
+          <div class="screen"></div>
+          <div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+          </div>
+          <div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat occupied"></div>
+            <div class="seat occupied"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+          </div>
+          <div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat occupied"></div>
+            <div class="seat occupied"></div>
+          </div>
+          <div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+          </div>
+          <div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat occupied"></div>
+            <div class="seat occupied"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+          </div>
+          <div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+          </div>
+          <div class="row">
+            <div class="seat occupied"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+          </div>
+        </div>
+        <p class="text"><span id="count">0</span> Tickets</p>
+        <p class="text">Rs.<span id="total">0</span></p>
+        <button class="payment-button">Proceed to Payment</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="./scripts/movieScript.js" type="module"></script>
+    <script src="./scripts/ticketScript.js" type="module"></script>
+  </body>
+</html>
