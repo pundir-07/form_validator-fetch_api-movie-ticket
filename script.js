@@ -78,7 +78,9 @@ form.addEventListener("submit", (e) => {
   if (flag_username && flag_email && flag_password && flag_confirm_password) {
     handleTestButton();
   } else {
-    alert("Please enter valid inputs");
+    alert("Please enter valid inputs:
+          Username: 5-16 characters
+          Password: 6-16 characters");
   }
 });
 function usernameValidator() {
